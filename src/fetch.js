@@ -7,5 +7,6 @@ export default async function fetchImages(value, page) {
 
   return await axios
     .get(`${url}${filter}`)
-    .then(response => console.log(response.data));
+    .then(response => response.data)
+    .catch(err => console.log(err));
 }
