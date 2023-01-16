@@ -68,7 +68,7 @@ async function onClickLoadMoreBtn() {
 
   currentHits += response.hits.length;
 
-  if (currentHits === response.totalHits) {
+  if (currentHits === response.totalHits || currentHits > response.totalHits) {
     button.classList.add('is-hidden');
     Notiflix.Notify.failure(
       "We're sorry, but you've reached the end of search results."
