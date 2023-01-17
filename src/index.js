@@ -17,7 +17,7 @@ let currentHits = 0;
 async function onSubmitSearchForm(e) {
   e.preventDefault();
 
-  inputValue = input.value;
+  const inputValue = input.value;
 
   currentPage = 1;
 
