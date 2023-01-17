@@ -64,6 +64,7 @@ async function onSubmitSearchForm(e) {
 
 async function onClickLoadMoreBtn() {
   currentPage += 1;
+  const inputValue = input.value;
   const response = await fetchImages(inputValue, currentPage);
 
   currentHits += response.hits.length;
@@ -82,7 +83,7 @@ function renderCardImage(arr) {
   const markup = arr
     .map(({ webformatURL, tags, likes, views, comments, downloads }) => {
       return `<div class="photo-card">
-  <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+  <img src="${webformatURL}" alt="${tags}" loading="lazy" class="img" />
   <div class="info">
     <p class="info-item">
       <b>Likes: ${likes}</b>
